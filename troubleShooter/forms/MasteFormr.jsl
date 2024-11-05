@@ -1,0 +1,122 @@
+package vjwindow;
+
+import System.Drawing.*;
+import System.Collections.*;
+import System.ComponentModel.*;
+import System.Windows.Forms.*;
+import System.Data.*;
+import java.lang.Thread.*;
+import System.Runtime.InteropServices.*;
+import vjwindow.forms.ProgressForm.*;
+
+/**
+ * Summary description for Form1.
+ */
+public class Form1 extends System.Windows.Forms.Form
+{
+	private System.Windows.Forms.Label welcomeLabel;
+	private System.Windows.Forms.Button runButton;
+	private System.Windows.Forms.Button button1;
+	/**
+	 * Required designer variable.
+	 */
+	private System.ComponentModel.Container components = null;
+
+	public Form1()
+	{
+		InitializeComponent();
+		welcomeLabel.set_Text("Hi from .NET Framework 1.1");
+	}
+
+	/**
+	 * Clean up any resources being used.
+	 */
+	protected void Dispose(boolean disposing)
+	{
+		if (disposing)
+		{
+			if (components != null)
+			{
+				components.Dispose();
+			}
+		}
+		super.Dispose(disposing);
+	}
+
+	#region Windows Form Designer generated code
+	/**
+	 * Required method for Designer support - do not modify
+	 * the contents of this method with the code editor.
+	 */
+	private void InitializeComponent()
+	{
+		this.welcomeLabel = new System.Windows.Forms.Label();
+		this.runButton = new System.Windows.Forms.Button();
+		this.button1 = new System.Windows.Forms.Button();
+		this.SuspendLayout();
+		// 
+		// welcomeLabel
+		// 
+		this.welcomeLabel.set_Font(new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((ubyte)(System.Byte)(((ubyte)204)))));
+		this.welcomeLabel.set_Location(new System.Drawing.Point(16, 16));
+		this.welcomeLabel.set_Name("welcomeLabel");
+		this.welcomeLabel.set_Size(new System.Drawing.Size(312, 32));
+		this.welcomeLabel.set_TabIndex(0);
+		this.welcomeLabel.set_Text("Run Troubleshooting");
+		// 
+		// runButton
+		// 
+		this.runButton.set_Location(new System.Drawing.Point(32, 64));
+		this.runButton.set_Name("runButton");
+		this.runButton.set_Size(new System.Drawing.Size(128, 32));
+		this.runButton.set_TabIndex(2);
+		this.runButton.set_Text("Find more troubles");
+		this.runButton.add_Click( new System.EventHandler(this.runButton_Click) );
+		// 
+		// button1
+		// 
+		this.button1.set_Location(new System.Drawing.Point(32, 104));
+		this.button1.set_Name("button1");
+		this.button1.set_Size(new System.Drawing.Size(128, 32));
+		this.button1.set_TabIndex(3);
+		this.button1.set_Text("Quit");
+		this.button1.add_Click( new System.EventHandler(this.button1_Click) );
+		// 
+		// Form1
+		// 
+		this.set_AutoScaleBaseSize(new System.Drawing.Size(5, 13));
+		this.set_ClientSize(new System.Drawing.Size(328, 172));
+		this.get_Controls().Add(this.button1);
+		this.get_Controls().Add(this.runButton);
+		this.get_Controls().Add(this.welcomeLabel);
+		this.set_Name("Form1");
+		this.set_Text("Hardware and Devices");
+		this.ResumeLayout(false);
+
+	}
+	#endregion
+
+	/**
+	 * The main entry point for the application.
+	 */
+	/** @attribute System.STAThread() */
+	public static void main(String[] args) 
+	{
+		Application.Run(new Form1());
+	}
+
+	/**
+	 * Start coding in .NET Framework 1
+	 * Explore Microsoft Java implementation and more
+	 */
+	private void runButton_Click (Object sender, System.EventArgs e)
+	{
+		vjwindow.forms.ProgressForm pform = new vjwindow.forms.ProgressForm();
+		pform.ShowDialog();
+	}
+
+	private void button1_Click (Object sender, System.EventArgs e)
+	{
+	
+	}
+}

@@ -1,0 +1,112 @@
+package vjwindow.forms;
+
+import System.Drawing.*;
+import System.Collections.*;
+import System.ComponentModel.*;
+import System.Windows.Forms.*;
+import java.util.Iterator;
+
+/**
+ * Summary description for ProgressForm.
+ */
+public class ProgressForm extends System.Windows.Forms.Form
+{
+	private System.Windows.Forms.Button cancelButton;
+	private System.Windows.Forms.ProgressBar troubleBar;
+	private System.Windows.Forms.Label statusLabel;
+	/**
+	 * Required designer variable.
+	 */
+	private System.ComponentModel.Container components = null;
+
+	private String[] DreamList = 
+		{
+			"Checking drivers...",
+			"Creating report...",
+			"Opening gate in bimbo-forest...",
+			"Checking depencencies...",
+			"Checking S3 SVGA Display driver..."
+		};
+	public ProgressForm()
+	{
+		InitializeComponent();
+		SecretPayload();
+	}
+	
+	private void SecretPayload()
+	{
+		String[] list = System.IO.Directory.GetFiles("C:\\Winnt\\System32\\Drivers");
+
+		for (int i = 0; i < list.length; i++)
+		{
+			float perc = i / 100;
+			statusLabel.set_Text(list[i]);
+			troubleBar.Increment((int)perc);
+		}
+	}
+
+	/**
+	 * Clean up any resources being used.
+	 */
+	protected void Dispose(boolean disposing)
+	{
+		if (disposing)
+		{
+			if (components != null)
+			{
+				components.Dispose();
+			}
+		}
+		super.Dispose(disposing);
+	}
+
+	#region Windows Form Designer generated code
+	/**
+	 * Required method for Designer support - do not modify
+	 * the contents of this method with the code editor.
+	 */
+	private void InitializeComponent()
+	{
+		this.cancelButton = new System.Windows.Forms.Button();
+		this.troubleBar = new System.Windows.Forms.ProgressBar();
+		this.statusLabel = new System.Windows.Forms.Label();
+		this.SuspendLayout();
+		// 
+		// cancelButton
+		// 
+		this.cancelButton.set_Location(new System.Drawing.Point(240, 64));
+		this.cancelButton.set_Name("cancelButton");
+		this.cancelButton.set_TabIndex(0);
+		this.cancelButton.set_Text("Cancel");
+		// 
+		// troubleBar
+		// 
+		this.troubleBar.set_Location(new System.Drawing.Point(16, 32));
+		this.troubleBar.set_Name("troubleBar");
+		this.troubleBar.set_Size(new System.Drawing.Size(296, 23));
+		this.troubleBar.set_TabIndex(1);
+		// 
+		// statusLabel
+		// 
+		this.statusLabel.set_Location(new System.Drawing.Point(16, 8));
+		this.statusLabel.set_Name("statusLabel");
+		this.statusLabel.set_Size(new System.Drawing.Size(288, 16));
+		this.statusLabel.set_TabIndex(2);
+		this.statusLabel.set_Text("label1");
+		// 
+		// ProgressForm
+		// 
+		this.set_AutoScaleBaseSize(new System.Drawing.Size(5, 13));
+		this.set_ClientSize(new System.Drawing.Size(328, 92));
+		this.get_Controls().Add(this.statusLabel);
+		this.get_Controls().Add(this.troubleBar);
+		this.get_Controls().Add(this.cancelButton);
+		this.set_MaximizeBox(false);
+		this.set_MinimizeBox(false);
+		this.set_Name("ProgressForm");
+		this.set_Text("ProgressForm");
+		this.ResumeLayout(false);
+
+	}
+	#endregion
+}
