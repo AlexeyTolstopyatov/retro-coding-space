@@ -1,4 +1,6 @@
 *.vbs diff=vbscript
+*.jsl diff=java
 *.vbs linguist-detectable=true
 *.js diff=jscript
 *.js linguist-detectable=true
+*.jsl linguist-detectable=true
