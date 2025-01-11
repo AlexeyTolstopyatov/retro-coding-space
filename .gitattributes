@@ -7,4 +7,4 @@
 *.twin linguist-detectable=true
 *.twin diff=vb6
 *.cs linguist-detectable=false
-*.bas diff=vb6
+*.bas linguist-language=Visual-Basic-6.0
