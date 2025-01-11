@@ -4,3 +4,5 @@
 *.js diff=jscript
 *.js linguist-detectable=true
 *.jsl linguist-detectable=true
+*.twin linguist-detectable=true
+*.twin diff=vb6

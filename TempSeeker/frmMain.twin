@@ -1,0 +1,24 @@
+[Description("Main Form. Shows statistics about detected catalogs")]
+[FormDesignerId("EAEAEAEA-EAEA-EAEA-EAEA-EAEAEAEAEA01")]
+[PredeclaredId]
+Class FrmMain
+    Sub New()
+        'Hide constructor signs
+        lbStatus.Caption = ""
+        EnableButton(cmdKill, False)
+    End Sub
+    Private Sub tbUserName_Click()
+        tbUserName.Text = ""
+    End Sub
+    Private Sub cmdSubmit_Click()
+        Dim result As Boolean = IsUserNameCorrect(tbUserName.Text)
+        If result = False Then
+            RaiseError(lbStatus, "Typed user's name is invalid")
+            Exit Sub
+        End If
+        UserCatalogName = tbUserName.Text
+        FillEntriesList(lstEntries)
+        EnableButton(cmdKill, True)
+        RaiseInformation(lbStatus, "Found: " & EntriesCount)
+    End Sub
+End Class
