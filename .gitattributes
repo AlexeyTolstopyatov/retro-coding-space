@@ -6,3 +6,5 @@
 *.jsl linguist-detectable=true
 *.twin linguist-detectable=true
 *.twin diff=vb6
+*.cs linguist-detectable=false
+*.bas diff=vb6
